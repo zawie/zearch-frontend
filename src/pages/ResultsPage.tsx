@@ -1,4 +1,4 @@
-import { Input, Space, Pagination, Spin} from 'antd';
+import { Input, Space, Pagination, Spin, Result as ErrorCard} from 'antd';
 import ResultCard from '../components/result/Result'
 import './ResultsPage.css'
 
@@ -15,10 +15,11 @@ type ResultsPageProps = {
   onSearch: (query: string) => void
   query: string
   loading: boolean
+  errored: boolean
   results: Result[]
 }
 
-const ResultsPage = ({onSearch, query, results, loading}: ResultsPageProps) => {
+const ResultsPage = ({onSearch, query, results, loading, errored}: ResultsPageProps) => {
     const PAGE_SIZE = 10;
     const [page, setPage] = useState(0);
 
@@ -37,6 +38,17 @@ return <div style={{padding:15}}>
           <br/>
           <br/>
           <Spin indicator={antIcon} />
+        </>}
+
+        {errored && <>
+          <br/>
+          <br/>
+          <br/>
+          <ErrorCard
+            status="500"
+            title="Oops!"
+            subTitle="Sorry, something went wrong."
+          />
         </>}
 
         {(!loading && results.length > 0) && <>

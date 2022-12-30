@@ -11,10 +11,22 @@ import { useSearchParams } from 'react-router-dom';
 
 import { Search, Result } from './helpers/engineInterface';
 
+type State = {
+  results: Result[]
+  loading: boolean
+  errored: boolean
+  query: string
+}
+
+
 const App = () => {
-  const [results, setResults]: [Result[] | undefined, any] = useState(undefined);
-  const [loading, setLoading] = useState(false);
-  const [query, setQuery] = useState("");
+  const [state, setState]: [State, any] = useState({
+    results: [],
+    loading: false,
+    errored: false,
+    query: ""
+  } as State);
+  
   let [searchParams, setSearchParams] = useSearchParams();
   console.log("search params: ", searchParams.get("query"));  
 
@@ -24,23 +36,34 @@ const App = () => {
   }
 
   const queryParam: string = (searchParams.get("query") || "").replaceAll("+", " ") 
-  if (query !== queryParam) {
-    setQuery(queryParam)
-    setLoading(true)
-    setResults([])
-    console.log("Searching:\"" + query + "\"")
+  if (state.query !== queryParam) {
+    setState({
+      results: [],
+      loading: true,
+      errored: false,
+      query: queryParam
+    })
     Search(queryParam).then((results: Result[]) => {
-      setResults(results)
-      setLoading(false)
+      setState({
+        results,
+        loading: false,
+        errored: false,
+        query: queryParam
+      })
     })
     .catch((r) => {
-      console.log("Failed to search: " + r)
+      setState({
+        result: [],
+        loading: false,
+        errored: true,
+        query: queryParam
+      })
     })
   }
 
-  const page = query.length < 1
+  const page = state.query.length < 1
     ? <SearchPage onSearch={onSearch}/>
-    : <ResultsPage onSearch={onSearch} query={query} loading={loading} results={results || []}/>
+    : <ResultsPage onSearch={onSearch} query={state.query} errored={state.errored} loading={state.loading} results={state.results || []}/>
 
   return  <div className="App">
      <PageHeader className="TopBar"

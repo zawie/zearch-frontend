@@ -11,19 +11,19 @@ type ResultProps = {
 }
 
 const ResultCard = ({result}: ResultProps) => {
-    const {title, description, url} = result;
+    const {title, description, url, keywords} = result;
 
     return <div className="ResultCardOuter">
             <a href={url.href} style={{textDecoration: 'none'}}>
                 <div className="ResultCardInner">
-                    <Text disabled> {url.host} </Text>
-                    <Link strong> {title} </Link>
+                    <Text disabled> {url.toString()} </Text>
+                    <Link strong> {title || url.toString()} </Link>
                     <Paragraph
                         type="secondary" 
                         style={{width: "100%", textAlign:"left"}} 
                         ellipsis={{ rows: 3, expandable: false } as EllipsisConfig}
                     >
-                            {description}
+                            {description || keywords || "No description"}
                     </Paragraph>
                 </div>
             </a>

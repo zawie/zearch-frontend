@@ -1,0 +1,24 @@
+.ResultCardOuter {
+    display: flex;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: white;
+    width: 100%;
+}
+
+.ResultCardInner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 750px;
+}
+
+.ResultCardOuter:hover { 
+    border-bottom: 2px solid rgb(217, 217, 217);
+    border-right: 2px solid rgb(217, 217, 217);
+    padding-bottom: 13px;
+    padding-right: 13px;
+
+}
+

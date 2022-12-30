@@ -14,7 +14,7 @@ const ResultCard = ({result}: ResultProps) => {
     const {title, description, url, keywords} = result;
 
     return <div className="ResultCardOuter">
-            <a href={url.href} style={{textDecoration: 'none'}}>
+            <a href={url.toString()} style={{textDecoration: 'none'}}>
                 <div className="ResultCardInner">
                     <Text disabled> {url.toString()} </Text>
                     <Link strong> {title || url.toString()} </Link>

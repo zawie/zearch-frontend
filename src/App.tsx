@@ -24,7 +24,7 @@ const App = () => {
   }
 
   const queryParam: string = (searchParams.get("query") || "").replaceAll("+", " ") 
-  if (query != queryParam) {
+  if (query !== queryParam) {
     setQuery(queryParam)
     setLoading(true)
     setResults([])
@@ -38,7 +38,7 @@ const App = () => {
     })
   }
 
-  const page = query.length == 0
+  const page = query.length < 1
     ? <SearchPage onSearch={onSearch}/>
     : <ResultsPage onSearch={onSearch} query={query} loading={loading} results={results || []}/>
 

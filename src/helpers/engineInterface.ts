@@ -9,7 +9,7 @@ export type Result = {
 export async function Search(query: string): Promise<Result[]> {
     const host =  "api.search.zawie.io"
     const response = await fetch("http://"+host+"/search/?query="+query.replaceAll(" ","+"));
-    if (response.status == 200) {
+    if (response.status === 200) {
         console.log(response);
         const json = await response.json() as {results: Result[]}
         console.log(json);

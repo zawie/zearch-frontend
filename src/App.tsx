@@ -8,8 +8,10 @@ import { useState } from 'react';
 import SearchPage from './pages/SearchPage'
 import ResultsPage from './pages/ResultsPage'
 import { useSearchParams } from 'react-router-dom';
-
+import { Typography } from 'antd'
 import { Search, Result } from './helpers/engineInterface';
+
+const { Text } = Typography;
 
 type State = {
   results: Result[]
@@ -72,6 +74,10 @@ const App = () => {
       avatar={{ shape: 'square', src: icon}}
     />
     {page}
+    <br/>
+    <div className="Footer">
+      <Text type="secondary"> Developed by <a href="https://zawie.io">Adam Zawierucha</a>.</Text>
+    </div>
   </div>
 
 };

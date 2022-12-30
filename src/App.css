@@ -10,6 +10,10 @@
   background-color: whitesmoke;
 }
 
+.Footer {
+  display: flex;
+  flex-direction: column;
+}
 .SearchBody {
   display: flex;
   justify-content: center;

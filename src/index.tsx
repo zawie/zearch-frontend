@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import { ConfigProvider } from 'antd';
+import { purple } from '@ant-design/colors';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -11,7 +13,16 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
       <BrowserRouter>
-      <App />
+        <ConfigProvider
+          theme={{
+            token: {
+              colorPrimary: "#722ed1",
+              colorLink: "#722ed1"
+            }
+          }}
+          >
+          <App />
+        </ConfigProvider>
       </BrowserRouter>
   </React.StrictMode>
 );

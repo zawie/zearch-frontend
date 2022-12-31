@@ -1,5 +1,7 @@
 import { Input, Space , Typography} from 'antd';
 
+import './SearchPage.css'
+
 const { Title } = Typography;
 const { Search } = Input;
 
@@ -11,7 +13,7 @@ type SearchPageProps = {
 const SearchPage = ({onSearch}: SearchPageProps) => {
     return <div className="SearchBody">
       <div style={{width: "100%", maxWidth:750, padding:10}}>
-      <Title> Zearch </Title>
+      <h1 className="LandingTitle"> Zearch </h1>
         <Search
           enterButton="Search"
           size="large"

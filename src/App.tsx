@@ -1,6 +1,8 @@
 import { PageHeader } from '@ant-design/pro-layout';
 import icon from './resources/icon.png';
 
+import { purple } from '@ant-design/colors';
+
 import 'antd/dist/reset.css';
 import './App.css';
 import { useState } from 'react';
@@ -8,7 +10,7 @@ import { useState } from 'react';
 import SearchPage from './pages/SearchPage'
 import ResultsPage from './pages/ResultsPage'
 import { useSearchParams } from 'react-router-dom';
-import { Typography } from 'antd'
+import { Typography, ConfigProvider } from 'antd'
 import { Search, Result } from './helpers/engineInterface';
 
 const { Text } = Typography;
@@ -68,15 +70,24 @@ const App = () => {
     : <ResultsPage onSearch={onSearch} query={state.query} errored={state.errored} loading={state.loading} results={state.results || []}/>
 
   return  <div className="App">
+    <ConfigProvider
+    theme={{
+      token: {
+        colorPrimary: purple.primary,
+      },
+    }}
+    >
+  </ConfigProvider>
      <PageHeader className="TopBar"
       onBack={undefined}
       title="Zearch"
       avatar={{ shape: 'square', src: icon}}
     />
     {page}
-    <br/>
     <div className="Footer">
+      <br/>
       <Text type="secondary"> Developed by <a href="https://zawie.io">Adam Zawierucha</a>.</Text>
+      <br/>
     </div>
   </div>
 

@@ -1,0 +1,16 @@
+.LandingTitle {
+    font-size: 72px;
+    font-weight: 1000;
+    background: -webkit-linear-gradient(top left, #ff00d9, rgb(55, 7, 132));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .SearchBody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+  }
+  

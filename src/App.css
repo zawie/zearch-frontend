@@ -13,6 +13,7 @@
 .Title {
   font-size: 72px;
   font-weight: 1000;
+  filter: drop-shadow(2px 1px 2px #0e0222c4);
   background: -webkit-linear-gradient(top left, #ff00d9, #370784);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

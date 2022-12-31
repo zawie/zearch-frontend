@@ -1,8 +1,7 @@
-import { Input, Space , Typography} from 'antd';
+import { Input, Space } from 'antd';
 
 import './SearchPage.css'
 
-const { Title } = Typography;
 const { Search } = Input;
 
 type SearchPageProps = {

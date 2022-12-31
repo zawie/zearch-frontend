@@ -45,7 +45,7 @@ return <div style={{padding:15}}>
           <br/>
           <br/>
           <ErrorCard
-            status="500"
+            status="error"
             title="Oops!"
             subTitle="Sorry, something went wrong."
           />

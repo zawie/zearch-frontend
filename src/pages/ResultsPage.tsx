@@ -25,7 +25,6 @@ const ResultsPage = ({onSearch, query, results, loading, errored}: ResultsPagePr
 
 return <div style={{padding:15}}>
         <Search
-          enterButton="Search"
           size="large"
           defaultValue={query}
           onSearch={onSearch}

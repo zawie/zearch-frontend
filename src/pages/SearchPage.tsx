@@ -14,7 +14,6 @@ const SearchPage = ({onSearch}: SearchPageProps) => {
       <div style={{width: "100%", maxWidth:750, padding:10}}>
       <h1 className="Title"> Zearch </h1>
         <Search
-          enterButton="Search"
           size="large"
           onSearch={onSearch}
         />

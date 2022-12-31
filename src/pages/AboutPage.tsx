@@ -1,12 +1,12 @@
 
-import { Button, Typography } from 'antd'
+import { Typography } from 'antd'
 import { PageHeader } from '@ant-design/pro-layout';
 import icon from '../resources/icon.png';
 
 
 import './AboutPage.css'
 
-const { Text, Title, Link, Paragraph } = Typography
+const { Text, Paragraph } = Typography
 
 const AboutPage = () => {
     return <div className="App">

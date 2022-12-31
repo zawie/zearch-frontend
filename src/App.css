@@ -10,6 +10,15 @@
   background-color: whitesmoke;
 }
 
+.Title {
+  font-size: 72px;
+  font-weight: 1000;
+  background: -webkit-linear-gradient(top left, #ff00d9, #370784);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
 .Footer {
   display: flex;
   flex-direction: column;

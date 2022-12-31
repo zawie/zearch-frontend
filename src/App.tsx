@@ -8,7 +8,7 @@ import { useState } from 'react';
 import SearchPage from './pages/SearchPage'
 import ResultsPage from './pages/ResultsPage'
 import { useSearchParams } from 'react-router-dom';
-import { Typography } from 'antd'
+import { Button, Typography } from 'antd'
 import { Search, Result } from './helpers/engineInterface';
 
 const { Text } = Typography;
@@ -72,6 +72,9 @@ const App = () => {
       onBack={undefined}
       title="Zearch"
       avatar={{ shape: 'square', src: icon}}
+      extra={[
+        <Button type="link" href='/about'> About </Button>,
+      ]}
     />
     {page}
     <div className="Footer">

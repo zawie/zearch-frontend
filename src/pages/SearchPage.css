@@ -1,16 +1,9 @@
-.LandingTitle {
-    font-size: 72px;
-    font-weight: 1000;
-    background: -webkit-linear-gradient(top left, #ff00d9, #370784);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .SearchBody {
+.SearchBody {
     display: flex;
+    align-items: flex-start;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 80vh;
-  }
+}
   

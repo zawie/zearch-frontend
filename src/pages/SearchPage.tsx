@@ -12,7 +12,7 @@ type SearchPageProps = {
 const SearchPage = ({onSearch}: SearchPageProps) => {
     return <div className="SearchBody">
       <div style={{width: "100%", maxWidth:750, padding:10}}>
-      <h1 className="LandingTitle"> Zearch </h1>
+      <h1 className="Title"> Zearch </h1>
         <Search
           enterButton="Search"
           size="large"

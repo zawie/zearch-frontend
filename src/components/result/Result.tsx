@@ -27,6 +27,8 @@ const ResultCard = ({result}: ResultProps) => {
                         {favicon}
                         &nbsp;
                         {url.hostname} 
+                        &nbsp;
+                        { result.nsfw && <Text type='secondary' style={{color: 'red', borderStyle: "solid", borderWidth: 1, borderColor: 'red'}}>NSFW</Text>}
                     </Text>
                     <Text 
                         strong
@@ -39,7 +41,7 @@ const ResultCard = ({result}: ResultProps) => {
                         style={{width: "100%", textAlign:"left"}} 
                         ellipsis={{ rows: 3, expandable: false } as EllipsisConfig}
                     >
-                            {description || keywords || "No description"}
+                        {description || keywords || "No description"}
                     </Paragraph>
                 </div>
             </a>

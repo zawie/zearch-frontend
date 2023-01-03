@@ -3,7 +3,8 @@ export type Result = {
     title: string;
     description: string;
     author: string;
-    keywords:string
+    keywords:string;
+    nsfw: boolean;
 };
 
 export async function Search(query: string): Promise<Result[]> {

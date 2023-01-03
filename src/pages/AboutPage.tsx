@@ -2,23 +2,37 @@
 import { Typography } from 'antd'
 import { PageHeader } from '@ant-design/pro-layout';
 import icon from '../resources/icon.png';
+import { Input } from 'antd';
 
 
 import './AboutPage.css'
+import { useNavigate } from 'react-router-dom';
 
+const { Search } = Input;
 const { Text, Paragraph } = Typography
 
 const AboutPage = () => {
+    const navigate = useNavigate();
+
     return <div className="App">
     <PageHeader className="TopBar"
      onBack={() => {window.location.href = '/';}}
      title="Zearch"
      avatar={{ shape: 'square', src: icon}}
    />
+
    <div className="AboutBody">
-    
+  
    <h1 className="Title"> About Zearch </h1>
 
+   <Search
+        size="large"
+        placeholder='Search'
+        style={{maxWidth: 750, paddingBottom: 25}}
+        onSearch={ (query: string) => {
+            navigate("/?query="+query.replaceAll(" ","+"));
+        }}
+    />
     <div className='Section'>
         <h3> Introduction </h3>
         <Paragraph style={{textAlign: "left"}}>

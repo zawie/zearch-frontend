@@ -18,7 +18,7 @@ const ResultCard = ({result}: ResultProps) => {
 
     console.log(favicon)
     return <div className="ResultCardOuter">
-            <a href={url.toString()} style={{textDecoration: 'none'}}>
+            <a href={url.href} style={{textDecoration: 'none'}}>
                 <div className="ResultCardInner">
                     <Text 
                         disabled

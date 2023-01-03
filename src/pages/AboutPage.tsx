@@ -51,7 +51,7 @@ const AboutPage = () => {
 
     <div className='Section'>
         <h3> Architecture </h3>
-        <img style={{maxHeight: 500, width: "auto"}} src={require('../resources/diagram.png')} />
+        <img style={{maxHeight: 500, width: "auto"}} src={require('../resources/diagram.png')} alt="AWS Diagram" />
         <Paragraph style={{textAlign: "left"}}>
             There are two functional components of this project.
         </Paragraph>

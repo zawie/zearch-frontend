@@ -34,7 +34,7 @@ const ResultCard = ({result}: ResultProps) => {
                         strong
                         ellipsis={{ rows: 1, expandable: false } as EllipsisConfig}
                     > 
-                        <a>{title || url.toString()} </a>
+                        <a href={url.href}>{title || url.hostname || "No Title"} </a>
                     </Text>
                     <Paragraph
                         type="secondary" 

@@ -1,9 +1,9 @@
-import { Typography } from 'antd';
+import { Typography} from 'antd';
 import { EllipsisConfig } from 'antd/es/typography/Base';
 import './Result.css';
 import { Result } from '../../helpers/engineInterface'
 
-const { Paragraph, Text, Link } = Typography;
+const { Paragraph, Text } = Typography;
 
 
 type ResultProps = {
@@ -13,11 +13,27 @@ type ResultProps = {
 const ResultCard = ({result}: ResultProps) => {
     const {title, description, url, keywords} = result;
 
+    const favicon_src = url.protocol+"//"+url.hostname+"/favicon.ico"
+    const favicon = <img height={14} src={favicon_src} alt=""/>
+
+    console.log(favicon)
     return <div className="ResultCardOuter">
             <a href={url.toString()} style={{textDecoration: 'none'}}>
                 <div className="ResultCardInner">
-                    <Text disabled> {url.toString()} </Text>
-                    <Link strong> {title || url.toString()} </Link>
+                    <Text 
+                        disabled
+                        ellipsis={{ rows: 1, expandable: false } as EllipsisConfig}
+                    > 
+                        {favicon}
+                        &nbsp;
+                        {url.hostname} 
+                    </Text>
+                    <Text 
+                        strong
+                        ellipsis={{ rows: 1, expandable: false } as EllipsisConfig}
+                    > 
+                        <a>{title || url.toString()} </a>
+                    </Text>
                     <Paragraph
                         type="secondary" 
                         style={{width: "100%", textAlign:"left"}} 

@@ -10,10 +10,12 @@ export async function Search(query: string): Promise<Result[]> {
     const host =  "api.search.zawie.io"
     const response = await fetch("https://"+host+"/search/?query="+query.replaceAll(" ","+"));
     if (response.status === 200) {
-        console.log(response);
         const json = await response.json() as {results: Result[]}
-        console.log(json);
-        return json.results as Result[];
+        const results = (json.results as Result[]).map(r => {
+           r.url = new URL(r.url)
+           return r;
+        })
+        return results;
     } else {
         throw Error(response.status + " error: " + response.statusText);
     }
